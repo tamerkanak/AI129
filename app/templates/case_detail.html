@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Vaka Detayı{% endblock %}
+{% block content %}
+<h2>{{ case.title }}</h2>
+<ul class="list-group mb-3">
+  <li class="list-group-item"><b>Hasta Adı:</b> {{ case.patient_name }}</li>
+  <li class="list-group-item"><b>Yaş:</b> {{ case.age }}</li>
+  <li class="list-group-item"><b>Şikayet:</b> {{ case.complaint }}</li>
+</ul>
+<a href="/" class="btn btn-secondary">Geri Dön</a>
+{% endblock %} 
