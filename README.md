@@ -103,8 +103,9 @@ Sprint 1, toplam 100 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 
 - Sprint sonunda, geliştirilen giriş ekranı, ana sayfa ve vaka detay sayfalarının ekran görüntüleri eklenecek.
 
-  ![](Aspose.Words.73972371-05e5-4441-979b-96454d29df5e.001.png)\
-  ![](Aspose.Words.73972371-05e5-4441-979b-96454d29df5e.002.png)![](Aspose.Words.73972371-05e5-4441-979b-96454d29df5e.003.png)
+![image](https://github.com/user-attachments/assets/181c8d15-ec01-4b4f-aaf8-226c348dc2ab)
+![image](https://github.com/user-attachments/assets/d55fd081-3c0a-47e4-a0bf-2a868d1b73b8)
+![image](https://github.com/user-attachments/assets/98540fa7-c589-4927-aff1-dcb9faf7f435)
 
 **Sprint Review**
 
