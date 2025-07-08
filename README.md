@@ -92,7 +92,7 @@ Sprint 1, toplam 100 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 
 - Daily Scrum toplantıları her gün 15 dakika süreyle yapılacak.
 - Toplantı notları bir metin dosyasında saklanacak ve gerektiğinde paylaşılacak.
-- Örnek: *Daily\_Scrum\_Notlari.txt* dosyasında saklanacak.
+- Örnek: *DailyScrum 30 Haziran - 6 Temmuz.txt* dosyasında saklanacak.
 
 **Sprint Board Güncellemeleri**
 
