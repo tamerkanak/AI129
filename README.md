@@ -109,6 +109,10 @@ Sprint 1, toplam 100 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 ![image](https://github.com/user-attachments/assets/d55fd081-3c0a-47e4-a0bf-2a868d1b73b8)
 ![image](https://github.com/user-attachments/assets/98540fa7-c589-4927-aff1-dcb9faf7f435)
 
+**Sprint 1 Özeti**
+
+- Sprint 1, 100 puanlık hedefiyle başarıyla tamamlandı. Tamer, Adnan ve Şahide, Betül’ün Scrum Master liderliğinde US01, US02, US03, US04, US06 ve US14’ü teslim etti. Daily Scrum’larla ilerleme takip edildi, Trello board’u güncel tutuldu. SQLite ve API bağımlılıklarındaki küçük engeller hızlıca çözüldü. Arayüz mobil uyumlu, backend stabil hale geldi. Ekip, Sprint Review ve Retrospektif’e hazır, proje sağlam bir temel kazandı.
+
 **Sprint Review**
 
 - Sprint sonunda, tamamlanan user story’ler paydaşlarla gözden geçirilecek.
