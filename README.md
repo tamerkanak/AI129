@@ -99,6 +99,8 @@ Sprint 1, toplam 100 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 - Sprint board, Trello kullanılarak yönetilecek. Her user story için bir kart oluşturulacak ve "Yapılacak", "Devam Ediyor", "Tamamlandı" sütunlarına taşınacak.
 - Sprint sonunda board'un ekran görüntüsü alınarak README’ye eklenecek.
 
+![image](https://github.com/user-attachments/assets/f72b1aef-5e9c-4f5b-bfd1-9ad3a33ce7f6)
+
 **Ürün Ekran Görüntüsü**
 
 - Sprint sonunda, geliştirilen giriş ekranı, ana sayfa ve vaka detay sayfalarının ekran görüntüleri eklenecek.
