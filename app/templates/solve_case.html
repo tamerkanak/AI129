@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Vaka Çöz - {{ case.title }}{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">
+                        <i class="fas fa-stethoscope"></i> Vaka Çözümü
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <!-- Vaka Özeti -->
+                    <div class="alert alert-info">
+                        <h5>Vaka Özeti</h5>
+                        <p><strong>Hasta:</strong> {{ case.patient_name }} ({{ case.age }} yaşında)</p>
+                        <p><strong>Şikayet:</strong> {{ case.complaint }}</p>
+                        {% if case.medical_history %}
+                        <p><strong>Tıbbi Geçmiş:</strong> {{ case.medical_history }}</p>
+                        {% endif %}
+                        {% if case.symptoms %}
+                        <p><strong>Belirtiler:</strong> {{ case.symptoms }}</p>
+                        {% endif %}
+                    </div>
+
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="diagnosis">
+                                <strong>Tanınız:</strong>
+                            </label>
+                            <textarea class="form-control" id="diagnosis" name="diagnosis" rows="4" 
+                                      placeholder="Hastanın tanısını detaylı bir şekilde yazın..." required></textarea>
+                            <small class="form-text text-muted">
+                                Örnek: Akut miyokard enfarktüsü, anterior duvar, STEMI
+                            </small>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label for="treatment">
+                                <strong>Tedavi Öneriniz:</strong>
+                            </label>
+                            <textarea class="form-control" id="treatment" name="treatment" rows="6" 
+                                      placeholder="Tedavi planınızı detaylı bir şekilde yazın..." required></textarea>
+                            <small class="form-text text-muted">
+                                Örnek: Acil koroner anjiyografi, aspirin, klopidogrel, heparin, beta bloker
+                            </small>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <a href="{{ url_for('cases.case_detail', case_id=case.id) }}" 
+                                   class="btn btn-secondary btn-block">
+                                    <i class="fas fa-arrow-left"></i> Geri Dön
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-success btn-block">
+                                    <i class="fas fa-check"></i> Çözümü Gönder
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- İpucu Kartı -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-lightbulb"></i> İpuçları
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success"></i> Önce detaylı anamnez alın</li>
+                        <li><i class="fas fa-check text-success"></i> Fizik muayene bulgularını değerlendirin</li>
+                        <li><i class="fas fa-check text-success"></i> Ayırıcı tanıları düşünün</li>
+                        <li><i class="fas fa-check text-success"></i> Acil durumları önceliklendirin</li>
+                        <li><i class="fas fa-check text-success"></i> Kanıta dayalı tedavi önerin</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

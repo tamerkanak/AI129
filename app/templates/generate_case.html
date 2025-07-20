@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block title %}Yeni Vaka Oluştur{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">
+                        <i class="fas fa-magic"></i> AI ile Yeni Vaka Oluştur
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <h5><i class="fas fa-info-circle"></i> Nasıl Çalışır?</h5>
+                        <p>AI, belirttiğiniz zorluk seviyesi ve uzmanlık alanına göre gerçekçi bir vaka senaryosu oluşturacak. 
+                        Oluşturulan vaka otomatik olarak sisteminize eklenecek.</p>
+                    </div>
+
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="difficulty">
+                                        <strong>Zorluk Seviyesi:</strong>
+                                    </label>
+                                    <select class="form-control" id="difficulty" name="difficulty" required>
+                                        <option value="easy">Kolay</option>
+                                        <option value="medium" selected>Orta</option>
+                                        <option value="hard">Zor</option>
+                                    </select>
+                                    <small class="form-text text-muted">
+                                        Kolay: Temel tanılar, Orta: Karmaşık vakalar, Zor: Nadir hastalıklar
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="specialty">
+                                        <strong>Uzmanlık Alanı:</strong>
+                                    </label>
+                                    <select class="form-control" id="specialty" name="specialty" required>
+                                        <option value="general" selected>Genel Tıp</option>
+                                        <option value="cardiology">Kardiyoloji</option>
+                                        <option value="neurology">Nöroloji</option>
+                                        <option value="emergency">Acil Tıp</option>
+                                        <option value="pediatrics">Pediatri</option>
+                                        <option value="internal_medicine">İç Hastalıkları</option>
+                                    </select>
+                                    <small class="form-text text-muted">
+                                        Vakanın odaklanacağı tıbbi alan
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <a href="{{ url_for('main.index') }}" 
+                                   class="btn btn-secondary btn-block">
+                                    <i class="fas fa-arrow-left"></i> İptal
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-magic"></i> Vaka Oluştur
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Özellikler -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-star"></i> AI Vaka Oluşturucu Özellikleri
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Gerçekçi hasta senaryoları</li>
+                                <li><i class="fas fa-check text-success"></i> Seviyeye uygun zorluk</li>
+                                <li><i class="fas fa-check text-success"></i> Detaylı tıbbi geçmiş</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Dinamik soru-cevap sistemi</li>
+                                <li><i class="fas fa-check text-success"></i> Uzmanlık alanına odaklı</li>
+                                <li><i class="fas fa-check text-success"></i> Anında değerlendirme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

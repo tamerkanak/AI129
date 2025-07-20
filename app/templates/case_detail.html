@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% block title %}Vaka Detayı{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">{{ case.title }}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Hasta Bilgileri</h5>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span><strong>Hasta Adı:</strong></span>
+                                    <span>{{ case.patient_name }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span><strong>Yaş:</strong></span>
+                                    <span>{{ case.age }}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span><strong>Ana Şikayet:</strong></span>
+                                    <span>{{ case.complaint }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Ek Bilgiler</h5>
+                            <ul class="list-group list-group-flush mb-3">
+                                {% if case.medical_history %}
+                                <li class="list-group-item">
+                                    <strong>Tıbbi Geçmiş:</strong><br>
+                                    {{ case.medical_history }}
+                                </li>
+                                {% endif %}
+                                {% if case.symptoms %}
+                                <li class="list-group-item">
+                                    <strong>Belirtiler:</strong><br>
+                                    {{ case.symptoms }}
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soru Sorma Bölümü -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Hastaya Soru Sor</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('cases.ask_question', case_id=case.id) }}">
+                        <div class="form-group">
+                            <label for="question">Sorunuzu yazın:</label>
+                            <textarea class="form-control" id="question" name="question" rows="3" 
+                                      placeholder="Örnek: Ağrı ne zaman başladı? Hangi bölgede hissediyorsunuz?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">
+                            <i class="fas fa-question-circle"></i> Soru Sor
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Mevcut Sorular ve Cevaplar -->
+            {% if questions %}
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Soru-Cevap Geçmişi</h5>
+                </div>
+                <div class="card-body">
+                    {% for question in questions %}
+                    <div class="border-bottom pb-3 mb-3">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-grow-1">
+                                <h6 class="text-primary mb-1">
+                                    <i class="fas fa-user-md"></i> Soru:
+                                </h6>
+                                <p class="mb-2">{{ question.question_text }}</p>
+                                <h6 class="text-success mb-1">
+                                    <i class="fas fa-user"></i> Hasta Cevabı:
+                                </h6>
+                                <p class="mb-0">{{ question.answer_text }}</p>
+                            </div>
+                            <span class="badge badge-secondary ml-2">{{ question.question_type }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-4">
+            <!-- Vaka Çözme Bölümü -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Vaka Çöz</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">Yeterli bilgi topladıktan sonra tanı ve tedavi önerinizi sunun.</p>
+                    <a href="{{ url_for('cases.solve_case', case_id=case.id) }}" class="btn btn-success btn-block">
+                        <i class="fas fa-stethoscope"></i> Vakayı Çöz
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hızlı Eylemler -->
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5 class="mb-0">Hızlı Eylemler</h5>
+                </div>
+                <div class="card-body">
+                    <a href="{{ url_for('main.index') }}" class="btn btn-secondary btn-block mb-2">
+                        <i class="fas fa-arrow-left"></i> Vaka Listesine Dön
+                    </a>
+                    <a href="{{ url_for('cases.generate_case') }}" class="btn btn-info btn-block">
+                        <i class="fas fa-plus"></i> Yeni Vaka Oluştur
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

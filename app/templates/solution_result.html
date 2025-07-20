@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block title %}Çözüm Sonucu - {{ case.title }}{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <!-- Başarı Mesajı -->
+            <div class="alert alert-success">
+                <h4 class="alert-heading">
+                    <i class="fas fa-check-circle"></i> Vaka Çözümünüz Kaydedildi!
+                </h4>
+                <p>AI değerlendirmesi tamamlandı. Aşağıda sonuçları görebilirsiniz.</p>
+            </div>
+
+            <!-- Puan Kartı -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="mb-0">
+                        <i class="fas fa-star"></i> Değerlendirme Sonucu
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="display-4 text-primary">{{ evaluation.score }}/100</div>
+                            <p class="text-muted">AI Puanı</p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-primary" role="progressbar" 
+                                     style="width: {{ evaluation.score }}%" 
+                                     aria-valuenow="{{ evaluation.score }}" 
+                                     aria-valuemin="0" aria-valuemax="100">
+                                    {{ evaluation.score }}%
+                                </div>
+                            </div>
+                            <p class="text-muted">Performans Seviyesi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Çözüm Detayları -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-user-md"></i> Sizin Çözümünüz
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <h6>Tanı:</h6>
+                            <p class="border p-3 bg-light">{{ solution.diagnosis }}</p>
+                            
+                            <h6>Tedavi:</h6>
+                            <p class="border p-3 bg-light">{{ solution.treatment }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-robot"></i> AI Geri Bildirimi
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <h6>Genel Değerlendirme:</h6>
+                            <p class="border p-3 bg-light">{{ evaluation.feedback }}</p>
+                            
+                            {% if evaluation.strengths %}
+                            <h6 class="text-success">Güçlü Yanlar:</h6>
+                            <ul class="list-unstyled">
+                                {% for strength in evaluation.strengths %}
+                                <li><i class="fas fa-check text-success"></i> {{ strength }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            
+                            {% if evaluation.improvements %}
+                            <h6 class="text-warning">Geliştirilebilir Alanlar:</h6>
+                            <ul class="list-unstyled">
+                                {% for improvement in evaluation.improvements %}
+                                <li><i class="fas fa-exclamation-triangle text-warning"></i> {{ improvement }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vaka Bilgileri -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-file-medical"></i> Vaka Bilgileri
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Hasta:</strong> {{ case.patient_name }} ({{ case.age }} yaşında)</p>
+                            <p><strong>Şikayet:</strong> {{ case.complaint }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            {% if case.medical_history %}
+                            <p><strong>Tıbbi Geçmiş:</strong> {{ case.medical_history }}</p>
+                            {% endif %}
+                            {% if case.symptoms %}
+                            <p><strong>Belirtiler:</strong> {{ case.symptoms }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eylem Butonları -->
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <a href="{{ url_for('cases.case_detail', case_id=case.id) }}" 
+                       class="btn btn-secondary btn-block">
+                        <i class="fas fa-arrow-left"></i> Vakaya Geri Dön
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="{{ url_for('main.index') }}" 
+                       class="btn btn-primary btn-block">
+                        <i class="fas fa-list"></i> Vaka Listesi
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="{{ url_for('cases.generate_case') }}" 
+                       class="btn btn-success btn-block">
+                        <i class="fas fa-plus"></i> Yeni Vaka
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

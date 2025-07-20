@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}Giriş - AI Klinik{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow">
+                <div class="card-header text-center bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="fas fa-stethoscope"></i> AI Klinik
+                    </h3>
+                    <p class="mb-0">Giriş Yapın</p>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">
+                                <i class="fas fa-user"></i> Kullanıcı Adı
+                            </label>
+                            <input type="text" class="form-control" id="username" name="username" 
+                                   placeholder="Kullanıcı adınızı girin" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                <i class="fas fa-lock"></i> Şifre
+                            </label>
+                            <input type="password" class="form-control" id="password" name="password" 
+                                   placeholder="Şifrenizi girin" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">
+                            <i class="fas fa-sign-in-alt"></i> Giriş Yap
+                        </button>
+                    </form>
+                    
+                    <!-- Demo Kullanıcı Bilgileri -->
+                    <div class="alert alert-info mt-3">
+                        <h6><i class="fas fa-info-circle"></i> Demo Kullanıcılar:</h6>
+                        <div class="row">
+                            <div class="col-6">
+                                <small><strong>Öğrenci:</strong><br>
+                                Kullanıcı: student<br>
+                                Şifre: 123</small>
+                            </div>
+                            <div class="col-6">
+                                <small><strong>Eğitmen:</strong><br>
+                                Kullanıcı: instructor<br>
+                                Şifre: 123</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Özellikler -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h6 class="text-center mb-3">
+                        <i class="fas fa-star"></i> Platform Özellikleri
+                    </h6>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-check text-success"></i> AI destekli vaka simülasyonu</li>
+                        <li><i class="fas fa-check text-success"></i> Dinamik soru-cevap sistemi</li>
+                        <li><i class="fas fa-check text-success"></i> Otomatik değerlendirme</li>
+                        <li><i class="fas fa-check text-success"></i> Mobil uyumlu tasarım</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
