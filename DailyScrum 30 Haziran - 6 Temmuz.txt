@@ -178,7 +178,7 @@
 - Tüm Daily Scrum notları bu dosyada (*Daily_Scrum_Notlari.txt*) saklanmaktadır.  
 - Trello board’u her gün güncellenmiş, kartlar “Yapılacak”, “Devam Ediyor” ve “Tamamlandı” sütunlarına taşınmıştır.  
 - Sprint 1’in tamamlanan puanı 100 olarak hedeflenmişti ve tüm user story’ler (US01, US02, US03, US04, US06, US14) tamamlandı.  
-=======
+
 **30 Haziran 2025, Pazartesi - Daily Scrum Notları**  
 **Saat:** 09:00  
 **Süre:** 15 dakika  
@@ -358,5 +358,5 @@
 - Tüm Daily Scrum notları bu dosyada (*Daily_Scrum_Notlari.txt*) saklanmaktadır.  
 - Trello board’u her gün güncellenmiş, kartlar “Yapılacak”, “Devam Ediyor” ve “Tamamlandı” sütunlarına taşınmıştır.  
 - Sprint 1’in tamamlanan puanı 100 olarak hedeflenmişti ve tüm user story’ler (US01, US02, US03, US04, US06, US14) tamamlandı.  
->>>>>>> origin/main
+
 - Sprint Review ve Retrospektif, 7 Temmuz 2025 Pazartesi günü yapılacak.
