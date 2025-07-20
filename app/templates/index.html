@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-<<<<<<< HEAD
 {% block title %}AI Klinik - Vaka Listesi{% endblock %}
 {% block content %}
 <div class="container mt-4">
@@ -112,26 +111,5 @@
         </div>
     </div>
     {% endif %}
-=======
-{% block title %}Vaka Listesi{% endblock %}
-{% block content %}
-<h2 class="mb-4 text-center">Vaka Listesi</h2>
-<div class="row justify-content-center">
-  {% if cases %}
-    {% for case in cases %}
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">{{ case.title }}</h5>
-            <p class="card-text"><b>Hasta:</b> {{ case.patient_name }}<br><b>Yaş:</b> {{ case.age }}</p>
-            <a href="/case/{{ case.id }}" class="btn btn-outline-primary w-100">Detayları Gör</a>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  {% else %}
-    <div class="col-12 text-center text-muted">Henüz vaka bulunamadı.</div>
-  {% endif %}
->>>>>>> origin/main
 </div>
 {% endblock %} 

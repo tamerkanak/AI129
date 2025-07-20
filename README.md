@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ﻿**AI Klinik - README**
 
 **Ürün Fikri ve Takım İçindeki Rollerin Belgelenmesi**
