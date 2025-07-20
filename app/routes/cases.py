@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for, flash
 from flask_login import login_required, current_user
 from ..models import Case, Question, CaseSolution
@@ -120,17 +119,4 @@ def generate_case():
         flash('Yeni vaka başarıyla oluşturuldu!', 'success')
         return redirect(url_for('cases.case_detail', case_id=new_case.id))
     
-    return render_template('generate_case.html') 
-=======
-from flask import Blueprint, render_template
-from flask_login import login_required
-from ..models import Case
-
-cases_bp = Blueprint('cases', __name__)
-
-@cases_bp.route('/case/<int:case_id>')
-@login_required
-def case_detail(case_id):
-    case = Case.query.get_or_404(case_id)
-    return render_template('case_detail.html', case=case) 
->>>>>>> origin/main
+    return render_template('generate_case.html')

@@ -3,25 +3,15 @@ from flask_login import login_required
 from ..models import Case
 from .. import db
 
-<<<<<<< HEAD
 bp = Blueprint('main', __name__)
 
 @bp.route('/')
-=======
-main_bp = Blueprint('main', __name__)
-
-@main_bp.route('/')
->>>>>>> origin/main
 @login_required
 def index():
     cases = Case.query.all()
     return render_template('index.html', cases=cases)
 
-<<<<<<< HEAD
 @bp.route('/add_demo_cases')
-=======
-@main_bp.route('/add_demo_cases')
->>>>>>> origin/main
 def add_demo_cases():
     if not Case.query.first():
         demo_cases = [

@@ -4,21 +4,13 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from ..models import User
 from .. import db, login_manager
 
-<<<<<<< HEAD
 bp = Blueprint('auth', __name__)
-=======
-auth_bp = Blueprint('auth', __name__)
->>>>>>> origin/main
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-<<<<<<< HEAD
 @bp.route('/login', methods=['GET', 'POST'])
-=======
-@auth_bp.route('/login', methods=['GET', 'POST'])
->>>>>>> origin/main
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -26,7 +18,6 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and check_password_hash(user.password, password):
             login_user(user)
-<<<<<<< HEAD
             flash(f'Hoş geldiniz, {username}!', 'success')
             return redirect(url_for('main.index'))
         else:
@@ -41,20 +32,6 @@ def logout():
     return redirect(url_for('auth.login'))
 
 @bp.route('/create_demo_user')
-=======
-            return redirect(url_for('main.index'))
-        else:
-            flash('Kullanıcı adı veya şifre hatalı!')
-    return render_template('login.html')
-
-@auth_bp.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('auth.login'))
-
-@auth_bp.route('/create_demo_user')
->>>>>>> origin/main
 def create_demo_user():
     if not User.query.filter_by(username='demo').first():
         user = User(username='demo', password=generate_password_hash('demo'))
