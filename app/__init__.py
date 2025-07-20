@@ -1,19 +1,34 @@
+<<<<<<< HEAD
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+=======
+from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
+>>>>>>> origin/main
 import os
 
 db = SQLAlchemy()
 login_manager = LoginManager()
 
+<<<<<<< HEAD
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'your-secret-key-here'
+=======
+
+def create_app():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'devkey'
+>>>>>>> origin/main
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
     login_manager.init_app(app)
+<<<<<<< HEAD
     login_manager.login_view = 'auth.login'
 
     from .routes import auth, main, cases
@@ -78,5 +93,23 @@ def create_app():
             for q in questions1 + questions2:
                 db.session.add(q)
             db.session.commit()
+=======
+    Bootstrap(app)
+
+    from .routes.auth import auth_bp
+    from .routes.main import main_bp
+    from .routes.cases import cases_bp
+
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(main_bp)
+    app.register_blueprint(cases_bp)
+
+    with app.app_context():
+        db.create_all()
+
+    @app.errorhandler(404)
+    def not_found(e):
+        return render_template('404.html'), 404
+>>>>>>> origin/main
 
     return app 

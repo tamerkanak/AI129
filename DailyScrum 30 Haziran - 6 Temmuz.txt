@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 **30 Haziran 2025, Pazartesi - Daily Scrum Notları**  
 **Saat:** 09:00  
 **Süre:** 15 dakika  
@@ -177,4 +178,185 @@
 - Tüm Daily Scrum notları bu dosyada (*Daily_Scrum_Notlari.txt*) saklanmaktadır.  
 - Trello board’u her gün güncellenmiş, kartlar “Yapılacak”, “Devam Ediyor” ve “Tamamlandı” sütunlarına taşınmıştır.  
 - Sprint 1’in tamamlanan puanı 100 olarak hedeflenmişti ve tüm user story’ler (US01, US02, US03, US04, US06, US14) tamamlandı.  
+=======
+**30 Haziran 2025, Pazartesi - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül (Scrum Master)  
+
+- **Tamer:**  
+  - Dün: US04 için Python/Flask server kurulumuna başladım, temel yapı hazır.  
+  - Bugün: SQLite veritabanı bağlantısını tamamlamayı planlıyorum.  
+  - Engeller: SQLite konfigürasyonunda ufak bir hata aldım, Betül’den destek isteyeceğim.  
+
+- **Adnan:**  
+  - Dün: US06 için HTML/CSS arayüz taslağını hazırladım, Bootstrap entegrasyonu yaptım.  
+  - Bugün: Giriş ekranı (US01) için arayüzü tamamlamaya çalışacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US02 için ana sayfada statik vaka listesi taslağını oluşturdum.  
+  - Bugün: Vaka listesini dinamik hale getirmek için Tamer ile backend bağlantısını konuşacağım.  
+  - Engeller: Backend API hazır değil, Tamer’in US04’ü tamamlamasını bekliyorum.  
+
+- **Betül (Scrum Master):**  
+  - Tamer’in SQLite sorununa bugün yardımcı olacağım. Şahide’nin bağımlılığı için Tamer ile önceliklendirme yapacağız. Trello board’unu güncelledim, herkes kartlarını kontrol etsin.  
+
+---
+
+**1 Temmuz 2025, Salı - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: SQLite bağlantısını tamamladım, US04’ün backend kısmı işlevsel.  
+  - Bugün: US14 için veritabanı şemasını tasarlamaya başlayacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US01 için giriş ekranı arayüzünü bitirdim, kullanıcı adı/şifre formu hazır.  
+  - Bugün: Giriş ekranının backend ile bağlantısını test edeceğim.  
+  - Engeller: Backend API’sinde küçük bir hata var, Tamer ile konuşacağım.  
+
+- **Şahide:**  
+  - Dün: Tamer ile US02 için backend bağlantısını konuştum, vaka listesi için API endpoint’ini bekliyorum.  
+  - Bugün: US03 için vaka detay sayfasının statik taslağını hazırlayacağım.  
+  - Engeller: API endpoint’i henüz hazır değil.  
+
+- **Betül (Scrum Master):**  
+  - Tamer ve Adnan’ın API bağlantı sorununu bugün çözeceğiz. Şahide’nin US02 bağımlılığı için Tamer’den endpoint’i hızlandırmasını rica ettim. Trello’da kartlar güncellendi.  
+
+---
+
+**2 Temmuz 2025, Çarşamba - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US14 için veritabanı şemasını tasarladım, kullanıcı ve vaka tabloları hazır.  
+  - Bugün: US02 için Şahide’nin ihtiyaç duyduğu vaka listesi API’sini tamamlayacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US01 için giriş ekranının backend bağlantısını test ettim, küçük bir hata düzeltildi.  
+  - Bugün: Giriş ekranını son haline getirip Trello’da “Tamamlandı”ya taşıyacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US03 için vaka detay sayfasının statik taslağını tamamladım.  
+  - Bugün: Tamer’in API’sini bekliyorum, vaka detaylarını dinamik hale getireceğim.  
+  - Engeller: API bağımlılığı devam ediyor.  
+
+- **Betül (Scrum Master):**  
+  - US01 tamamlanmak üzere, Adnan’ı tebrik ederim! Tamer’in API’sini bugün bitirmesi için takipteyim. Sprint ilerlemesi iyi, Trello board’u güncel.  
+
+---
+
+**3 Temmuz 2025, Perşembe - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US02 için vaka listesi API’sini tamamladım, Şahide test edebilir.  
+  - Bugün: US14 için veritabanına veri ekleme/çekme fonksiyonlarını yazacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US01 tamamlandı, Trello’da “Tamamlandı”ya taşıdım.  
+  - Bugün: US06 için arayüzde mobil uyumluluk (responsive) düzenlemelerine başlayacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: Tamer’in API’sini test ettim, US02 için vaka listesini dinamik hale getirdim.  
+  - Bugün: US03’ü tamamlayıp vaka detay sayfasını Trello’da “Tamamlandı”ya taşıyacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - US01 ve US02 tamamlandı, harika iş! Şahide’nin US03’ü bugün bitirmesiyle Sprint 1’in büyük kısmını kapatacağız. Trello board’u güncel, ekran görüntülerini almaya başlayacağım.  
+
+---
+
+**4 Temmuz 2025, Cuma - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US14 için veri ekleme/çekme fonksiyonlarını yazdım, testler başarılı.  
+  - Bugün: Veritabanı performansını optimize edeceğim ve dökümantasyon yazacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US06 için arayüzün mobil uyumluluğunu test ettim, birkaç CSS düzeltmesi gerekiyor.  
+  - Bugün: CSS düzeltmelerini yapıp US06’yı tamamlayacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US03’ü tamamladım, vaka detay sayfası Trello’da “Tamamlandı”ya taşındı.  
+  - Bugün: US02 ve US03’ün entegrasyon testlerini yapacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - Sprint 1’in tüm user story’leri tamamlanmak üzere, harika bir hafta! Pazartesi Sprint Review için paydaşlarla toplantı ayarladım. Ekran görüntülerini topluyorum.  
+
+---
+
+**5 Temmuz 2025, Cumartesi - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US14 için veritabanı performans optimizasyonunu tamamladım, dökümantasyon yazdım.  
+  - Bugün: US04 ve US14’ün entegrasyon testlerini yapacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US06 için CSS düzeltmelerini tamamladım, arayüz mobil uyumlu hale geldi.  
+  - Bugün: US06’yı Trello’da “Tamamlandı”ya taşıyacağım ve genel arayüz testleri yapacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US02 ve US03’ün entegrasyon testlerini tamamladım, her şey sorunsuz çalışıyor.  
+  - Bugün: Sprint Review için vaka listesi ve detay sayfalarının ekran görüntülerini hazırlayacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - Sprint 1 tamamlandı, tüm user story’ler (US01, US02, US03, US04, US06, US14) Trello’da “Tamamlandı”ya taşındı. Yarın son kontrolleri yapıp ekran görüntülerini README’ye ekleyeceğim.  
+
+---
+
+**6 Temmuz 2025, Pazar - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US04 ve US14’ün entegrasyon testlerini tamamladım, backend stabil.  
+  - Bugün: Sprint Review için backend dökümantasyonunu gözden geçireceğim ve sunuma hazırlanacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US06 tamamlandı, genel arayüz testleri sorunsuz geçti.  
+  - Bugün: Sprint Review için giriş ekranı ve arayüz ekran görüntülerini hazırlayacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: Vaka listesi ve detay sayfalarının ekran görüntülerini hazırladım.  
+  - Bugün: Sprint Review sunumu için notlarımı düzenleyeceğim ve paydaş geri bildirimlerine hazırlanacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - Sprint 1 hedefleri tamamlandı, 100 puanlık tüm user story’ler teslim edildi. Bugün ekran görüntülerini README’ye ekleyeceğim ve yarınki Sprint Review ile Retrospektif toplantılarını organize edeceğim. Trello board’u güncel, harika bir sprint oldu!  
+
+---
+
+**Notlar:**  
+- Tüm Daily Scrum notları bu dosyada (*Daily_Scrum_Notlari.txt*) saklanmaktadır.  
+- Trello board’u her gün güncellenmiş, kartlar “Yapılacak”, “Devam Ediyor” ve “Tamamlandı” sütunlarına taşınmıştır.  
+- Sprint 1’in tamamlanan puanı 100 olarak hedeflenmişti ve tüm user story’ler (US01, US02, US03, US04, US06, US14) tamamlandı.  
+>>>>>>> origin/main
 - Sprint Review ve Retrospektif, 7 Temmuz 2025 Pazartesi günü yapılacak.
