@@ -13,9 +13,6 @@ class AIService:
         if not api_key:
             print("UYARI: GOOGLE_API_KEY environment variable bulunamadı!")
             print("Vaka oluşturma özelliği sınırlı olacak.")
-            # Geçici test anahtarı (gerçek uygulamada kullanmayın)
-            api_key = 'AIzaSyByPqJtNQlHcldml-ArPHkYrJKkfFtX4es'
-        
         try:
             genai.configure(api_key=api_key)
             self.model = genai.GenerativeModel('gemini-2.0-flash-lite')
