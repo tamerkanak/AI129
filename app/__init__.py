@@ -48,10 +48,10 @@ def create_app():
                     db.session.add(student)
                     db.session.add(instructor)
                     db.session.commit()
-                
-                # Eğer vaka yoksa örnek vakalar ekle
-                if not Case.query.first():
+                    
+                    # Örnek kullanıcılar için demo vakalar ekle
                     case1 = Case(
+                        user_id=student.id,  # student kullanıcısına ait
                         title='Göğüs Ağrısı Vakası',
                         patient_name='Ahmet Yılmaz',
                         age=45,
@@ -60,6 +60,7 @@ def create_app():
                         symptoms='Göğüs ağrısı, nefes darlığı, terleme'
                     )
                     case2 = Case(
+                        user_id=student.id,  # student kullanıcısına ait
                         title='Karın Ağrısı Vakası',
                         patient_name='Fatma Demir',
                         age=32,

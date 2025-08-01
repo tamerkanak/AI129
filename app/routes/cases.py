@@ -10,6 +10,12 @@ bp = Blueprint('cases', __name__)
 @login_required
 def case_detail(case_id):
     case = Case.query.get_or_404(case_id)
+    
+    # Kullanıcının sadece kendi vakalarına erişebilmesi
+    if case.user_id != current_user.id and not current_user.is_instructor:
+        flash('Bu vakaya erişim yetkiniz yok.', 'error')
+        return redirect(url_for('main.index'))
+    
     questions = Question.query.filter_by(case_id=case_id).all()
     return render_template('case_detail.html', case=case, questions=questions)
 
@@ -17,6 +23,12 @@ def case_detail(case_id):
 @login_required
 def ask_question(case_id):
     case = Case.query.get_or_404(case_id)
+    
+    # Kullanıcının sadece kendi vakalarına erişebilmesi
+    if case.user_id != current_user.id and not current_user.is_instructor:
+        flash('Bu vakaya erişim yetkiniz yok.', 'error')
+        return redirect(url_for('main.index'))
+    
     question_text = request.form.get('question')
     
     if not question_text:
@@ -44,6 +56,11 @@ def ask_question(case_id):
 @login_required
 def solve_case(case_id):
     case = Case.query.get_or_404(case_id)
+    
+    # Kullanıcının sadece kendi vakalarına erişebilmesi
+    if case.user_id != current_user.id and not current_user.is_instructor:
+        flash('Bu vakaya erişim yetkiniz yok.', 'error')
+        return redirect(url_for('main.index'))
     
     if request.method == 'POST':
         diagnosis = request.form.get('diagnosis')
@@ -93,8 +110,9 @@ def generate_case():
         # AI ile yeni vaka oluştur
         case_data = ai_service.generate_case(difficulty, specialty)
         
-        # Vakayı veritabanına kaydet
+        # Vakayı veritabanına kaydet (kullanıcıya ait)
         new_case = Case(
+            user_id=current_user.id,  # Vakayı oluşturan kullanıcı
             title=case_data['title'],
             patient_name=case_data['patient_name'],
             age=case_data['age'],
@@ -172,3 +190,15 @@ def my_solutions():
     # Kullanıcının kendi çözümlerini getir
     solutions = CaseSolution.query.filter_by(user_id=current_user.id).join(Case).order_by(CaseSolution.created_at.desc()).all()
     return render_template('my_solutions.html', solutions=solutions)
+
+# Eğitmen paneli - Tüm vakaları görme
+@bp.route('/instructor/cases')
+@login_required
+def instructor_cases():
+    if not current_user.is_instructor:
+        flash('Bu sayfaya erişim yetkiniz yok.', 'error')
+        return redirect(url_for('main.index'))
+    
+    # Tüm vakaları getir (eğitmenler tüm vakaları görebilir)
+    cases = Case.query.join(User).order_by(Case.created_at.desc()).all()
+    return render_template('instructor_cases.html', cases=cases)
