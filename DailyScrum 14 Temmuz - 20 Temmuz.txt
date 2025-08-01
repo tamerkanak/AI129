@@ -1,0 +1,180 @@
+**14 Temmuz 2025, Pazartesi - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül (Scrum Master)  
+
+- **Tamer:**  
+  - Dün: Sprint 2 Retrospektif ve Review toplantılarına katıldım, AI algoritması dökümantasyonunu sundum.  
+  - Bugün: US12 için dinamik AI cevapları üreten kural tabanlı sistemin temel yapısını tasarlamaya başlayacağım.  
+  - Engeller: AI cevapları için veri formatını netleştirmem gerekiyor, Betül ile görüşeceğim.  
+
+- **Adnan:**  
+  - Dün: Sprint 2 Review için arayüz ekran görüntülerini sundum.  
+  - Bugün: US09 için eğitmen panelinde öğrenci çözümlerini listeleyen statik sayfanın taslağını hazırlayacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: Sprint 2 Review için soru sorma ve tanı arayüzlerinin ekran görüntülerini sundum.  
+  - Bugün: US15 için geçmiş vaka çözümlerini listeleyen sayfanın statik taslağını hazırlayacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - Sprint 2 Review ve Retrospektif başarıyla tamamlandı. Tamer’in veri formatı kararını bugün netleştirelim. Trello board’unu Sprint 3 için güncelledim, herkes kartlarını kontrol etsin.  
+
+---
+
+**15 Temmuz 2025, Salı - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US12 için dinamik AI cevapları veri formatını belirledim, kural tabanlı sistem taslağını hazırladım.  
+  - Bugün: US12 için AI cevap sistemini kodlamaya başlayacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US09 için eğitmen panelinde statik çözüm listesi sayfasını hazırladım.  
+  - Bugün: US10 için eğitmen puanlama arayüzünün statik taslağını hazırlayacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US15 için geçmiş vaka çözümlerini listeleyen statik sayfa taslağını tamamladım.  
+  - Bugün: US15 için backend bağlantısını kurmak için Tamer ile API endpoint’lerini konuşacağım.  
+  - Engeller: API endpoint’leri henüz hazır değil.  
+
+- **Betül (Scrum Master):**  
+  - Şahide’nin API bağımlılığı için Tamer ile bugün görüşeceğiz. Trello board’u güncel, Sprint 3 iyi başladı.  
+
+---
+
+**16 Temmuz 2025, Çarşamba - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US12 için AI cevap sistemini kodladım, basit dinamik cevaplar üretiyor.  
+  - Bugün: US12 için API endpoint’lerini tamamlayacağım, Şahide’nin US15’i için destek vereceğim.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US10 için eğitmen puanlama arayüzünün statik taslağını tamamladım.  
+  - Bugün: US09 için çözüm listesi sayfasını dinamik hale getirmek için backend bağlantısını kuracağım.  
+  - Engeller: Tamer’in API’sini bekliyorum.  
+
+- **Şahide:**  
+  - Dün: Tamer ile US15 için backend bağlantısını konuştum, API endpoint’lerini bekliyorum.  
+  - Bugün: US15 için geçmiş çözümler sayfasını dinamik hale getireceğim.  
+  - Engeller: API bağımlılığı devam ediyor.  
+
+- **Betül (Scrum Master):**  
+  - Tamer’in API endpoint’lerini bugün tamamlaması için takipteyim. US09 ve US15’in bağımlılıklarını çözmek için ekibi koordine edeceğim. Trello board’u güncel.  
+
+---
+
+**17 Temmuz 2025, Perşembe - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US12 için API endpoint’lerini tamamladım, Şahide ve Adnan test edebilir.  
+  - Bugün: US10 için puanlama sisteminin backend logic’ini yazmaya başlayacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US09 için çözüm listesi sayfasını Tamer’in API’siyle dinamik hale getirdim.  
+  - Bugün: US09’u test edip Trello’da “Tamamlandı”ya taşıyacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US15 için geçmiş çözümler sayfasını Tamer’in API’siyle dinamik hale getirdim.  
+  - Bugün: US15’i test edip Trello’da “Tamamlandı”ya taşıyacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - US09 ve US15 tamamlanmak üzere, harika iş! Tamer’in US10’u için bağımlılıkları takip edeceğim. Trello board’u güncel, ekran görüntülerini almaya başlayacağım.  
+
+---
+
+**18 Temmuz 2025, Cuma - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US10 için puanlama sisteminin backend logic’ini yazdım, testler başarılı.  
+  - Bugün: US10’un frontend entegrasyonuna destek vereceğim ve dökümantasyon yazacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US09’u test ettim, Trello’da “Tamamlandı”ya taşındı.  
+  - Bugün: US10 için puanlama arayüzünün frontend entegrasyonunu tamamlayacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US15’i test ettim, Trello’da “Tamamlandı”ya taşındı.  
+  - Bugün: US09 ve US15’in entegrasyon testlerini yapacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - US09 ve US15 tamamlandı, harika bir ilerleme! Sprint 3’ün büyük kısmı bitti. Pazartesi Sprint Review için hazırlıklar başladı, ekran görüntülerini topluyorum.  
+
+---
+
+**19 Temmuz 2025, Cumartesi - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US10’un frontend entegrasyonunu tamamladım, dökümantasyon yazdım.  
+  - Bugün: US12 ve US10’un entegrasyon testlerini yapacağım.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US10 için puanlama arayüzünü tamamladım, Trello’da “Tamamlandı”ya taşındı.  
+  - Bugün: US09 ve US10’un genel arayüz testlerini yapacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: US09 ve US15’in entegrasyon testlerini tamamladım, her şey sorunsuz.  
+  - Bugün: Sprint Review için eğitmen paneli ve geçmiş çözümler ekran görüntülerini hazırlayacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - Sprint 3’ün tüm user story’leri (US09, US10, US12, US15) tamamlanmak üzere. Yarın son kontrolleri yapıp ekran görüntülerini README’ye ekleyeceğim. Trello board’u güncel.  
+
+---
+
+**20 Temmuz 2025, Pazar - Daily Scrum Notları**  
+**Saat:** 09:00  
+**Süre:** 15 dakika  
+**Katılımcılar:** Tamer, Adnan, Şahide, Betül  
+
+- **Tamer:**  
+  - Dün: US12 ve US10’un entegrasyon testlerini tamamladım, sistem stabil.  
+  - Bugün: Sprint Review için AI cevap sistemi ve puanlama dökümantasyonunu gözden geçireceğim.  
+  - Engeller: Yok.  
+
+- **Adnan:**  
+  - Dün: US09 ve US10’un arayüz testlerini tamamladım, her şey sorunsuz.  
+  - Bugün: Sprint Review için eğitmen paneli ekran görüntülerini hazırlayacağım.  
+  - Engeller: Yok.  
+
+- **Şahide:**  
+  - Dün: Eğitmen paneli ve geçmiş çözümler ekran görüntülerini hazırladım.  
+  - Bugün: Sprint Review sunumu için notlarımı düzenleyeceğim ve paydaş geri bildirimlerine hazırlanacağım.  
+  - Engeller: Yok.  
+
+- **Betül (Scrum Master):**  
+  - Sprint 3 hedefleri tamamlandı, 30 puanlık tüm user story’ler teslim edildi. Bugün ekran görüntülerini README’ye ekleyeceğim ve yarınki Sprint Review ile Retrospektif toplantılarını organize edeceğim. Trello board’u güncel, proje tamamlandı!  
+
+---
+
+**Notlar:**  
+- Tüm Daily Scrum notları bu dosyada (*DailyScrum 14 Temmuz - 20 Temmuz.txt*) saklanmaktadır.  
+- Trello board’u her gün güncellenmiş, kartlar “Yapılacak”, “Devam Ediyor” ve “Tamamlandı” sütunlarına taşınmıştır.  
+- Sprint 3’ün tamamlanan puanı 30 olarak hedeflenmişti ve tüm user story’ler (US09, US10, US12, US15) tamamlandı.  
+- Sprint Review ve Retrospektif, 21 Temmuz 2025 Pazartesi günü yapılacak.
