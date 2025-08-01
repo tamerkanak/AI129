@@ -1,11 +1,15 @@
 import google.generativeai as genai
 import os
 from typing import Dict, List, Optional
+from dotenv import load_dotenv
+
+# .env dosyasını yükle
+load_dotenv()
 
 class AIService:
     def __init__(self):
-        # API anahtarını environment variable'dan al
-        api_key = "AIzaSyByPqJtNQlHcldml-ArPHkYrJKkfFtX4es"
+        # API anahtarını .env dosyasından al
+        api_key = os.getenv('GOOGLE_API_KEY')
         if not api_key:
             print("UYARI: GOOGLE_API_KEY environment variable bulunamadı!")
             print("Vaka oluşturma özelliği sınırlı olacak.")
