@@ -169,7 +169,7 @@ Sprint 2, toplam 110 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 
 <img width="1832" height="864" alt="image" src="https://github.com/user-attachments/assets/92da288a-2877-4677-8313-8566e35640cd" />
 <img width="1851" height="855" alt="image" src="https://github.com/user-attachments/assets/c67a0671-6dfc-4f14-80b3-f611d6f48db8" />
-<img width="1054" height="853" alt="image" src="https://github.com/user-attachments/assets/56d63aae-42dc-4b0c-a6e4-26e365a82b66" />
+<img width="1054" height="853" alt="image" src="https://github.com/user-attachments/assets/56d63bae-42dc-4b0c-a6e4-26e365a82b66" />
 
 **Sprint 2 Özeti**
 
