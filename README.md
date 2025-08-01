@@ -227,6 +227,11 @@ Sprint 3, toplam 30 puan olacak şekilde planlanmıştır. Aşağıdaki user sto
 
 - Sprint sonunda, geliştirilen özelliklerin ekran görüntüleri eklenecek.
 
+<img width="1859" height="866" alt="image" src="https://github.com/user-attachments/assets/501d7472-48c1-449f-bd3f-61ee598b2dfd" />
+<img width="1855" height="879" alt="image" src="https://github.com/user-attachments/assets/e036a498-cbf2-4337-bb8a-e1e64e3c5d9d" />
+<img width="1859" height="877" alt="image" src="https://github.com/user-attachments/assets/92146b69-b572-458b-9d5b-fb5da482628e" />
+<img width="864" height="849" alt="image" src="https://github.com/user-attachments/assets/ba9275e2-5194-43e4-8448-33f995c56bac" />
+
 **Sprint 3 Özeti**
 
 - Sprint 3, 30 puanlık hedefiyle başarıyla tamamlandı. Ekip, eğitmen paneli ve kullanıcı deneyimi üzerinde odaklandı. US09, US10, US12 ve US15 başarıyla teslim edildi. Eğitmen paneli tam fonksiyonel hale geldi, kullanıcılar geçmiş çözümlerini görebiliyor, AI dinamik cevaplar üretiyor. Proje artık tamamen tamamlanmış durumda.
