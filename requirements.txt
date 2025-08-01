@@ -3,4 +3,5 @@ flask_sqlalchemy
 flask_login
 flask_bootstrap
 google-generativeai
-python-dotenv 
+python-dotenv
+gunicorn 
