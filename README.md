@@ -161,7 +161,7 @@ Sprint 2, toplam 110 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 - Sprint board, Trello kullanılarak yönetilecek. Her user story için bir kart oluşturulacak ve "Yapılacak", "Devam Ediyor", "Tamamlandı" sütunlarına taşınacak.
 - Sprint sonunda board'un ekran görüntüsü alınarak README'ye eklenecek.
 
-![image](https://github.com/user-attachments/assets/placeholder-sprint2-board.png)
+<img width="1845" height="860" alt="image" src="https://github.com/user-attachments/assets/1b63ef4e-bc79-4349-802b-8122b7931a26" />
 
 **Ürün Ekran Görüntüsü**
 
