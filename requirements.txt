@@ -4,4 +4,5 @@ flask_login
 flask_bootstrap
 google-generativeai
 python-dotenv
-gunicorn 
+gunicorn
+psycopg2-binary 
