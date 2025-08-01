@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+
+{% block title %}Eğitmen Paneli - Öğrenci Çözümleri{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">
+                <i class="fas fa-chalkboard-teacher text-primary"></i>
+                Eğitmen Paneli - Öğrenci Çözümleri
+            </h2>
+            
+            {% if solutions %}
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-list"></i>
+                        Tüm Öğrenci Çözümleri ({{ solutions|length }})
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Öğrenci</th>
+                                    <th>Vaka</th>
+                                    <th>Tanı</th>
+                                    <th>Tedavi</th>
+                                    <th>AI Puanı</th>
+                                    <th>Eğitmen Puanı</th>
+                                    <th>Tarih</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for solution in solutions %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ solution.user.username }}</strong>
+                                    </td>
+                                    <td>
+                                        <a href="{{ url_for('cases.case_detail', case_id=solution.case.id) }}" 
+                                           class="text-decoration-none">
+                                            {{ solution.case.title }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span class="text-truncate d-inline-block" style="max-width: 150px;" 
+                                              title="{{ solution.diagnosis }}">
+                                            {{ solution.diagnosis[:50] }}{% if solution.diagnosis|length > 50 %}...{% endif %}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="text-truncate d-inline-block" style="max-width: 150px;" 
+                                              title="{{ solution.treatment }}">
+                                            {{ solution.treatment[:50] }}{% if solution.treatment|length > 50 %}...{% endif %}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {% if solution.ai_score is not none %}
+                                            <span class="badge {% if solution.ai_score >= 80 %}bg-success{% elif solution.ai_score >= 60 %}bg-warning{% else %}bg-danger{% endif %}">
+                                                {{ "%.1f"|format(solution.ai_score) }}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if solution.instructor_score is not none %}
+                                            <span class="badge {% if solution.instructor_score >= 80 %}bg-success{% elif solution.instructor_score >= 60 %}bg-warning{% else %}bg-danger{% endif %}">
+                                                {{ "%.1f"|format(solution.instructor_score) }}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <small class="text-muted">
+                                            {{ solution.created_at.strftime('%d.%m.%Y %H:%M') }}
+                                        </small>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a href="{{ url_for('cases.grade_solution', solution_id=solution.id) }}" 
+                                               class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-star"></i> Puanla
+                                            </a>
+                                            <button type="button" class="btn btn-sm btn-outline-info" 
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#solutionModal{{ solution.id }}">
+                                                <i class="fas fa-eye"></i> Detay
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detay Modalları -->
+            {% for solution in solutions %}
+            <div class="modal fade" id="solutionModal{{ solution.id }}" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                <i class="fas fa-user-graduate"></i>
+                                {{ solution.user.username }} - {{ solution.case.title }}
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-primary">
+                                        <i class="fas fa-stethoscope"></i> Tanı
+                                    </h6>
+                                    <p class="border rounded p-3 bg-light">{{ solution.diagnosis }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-success">
+                                        <i class="fas fa-pills"></i> Tedavi
+                                    </h6>
+                                    <p class="border rounded p-3 bg-light">{{ solution.treatment }}</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <h6 class="text-info">
+                                        <i class="fas fa-robot"></i> AI Puanı
+                                    </h6>
+                                    <p class="h4">
+                                        {% if solution.ai_score is not none %}
+                                            <span class="badge {% if solution.ai_score >= 80 %}bg-success{% elif solution.ai_score >= 60 %}bg-warning{% else %}bg-danger{% endif %} fs-6">
+                                                {{ "%.1f"|format(solution.ai_score) }}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">-</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="text-warning">
+                                        <i class="fas fa-chalkboard-teacher"></i> Eğitmen Puanı
+                                    </h6>
+                                    <p class="h4">
+                                        {% if solution.instructor_score is not none %}
+                                            <span class="badge {% if solution.instructor_score >= 80 %}bg-success{% elif solution.instructor_score >= 60 %}bg-warning{% else %}bg-danger{% endif %} fs-6">
+                                                {{ "%.1f"|format(solution.instructor_score) }}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">-</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="text-muted">
+                                        <i class="fas fa-calendar"></i> Tarih
+                                    </h6>
+                                    <p class="h6 text-muted">
+                                        {{ solution.created_at.strftime('%d.%m.%Y %H:%M') }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('cases.grade_solution', solution_id=solution.id) }}" 
+                               class="btn btn-primary">
+                                <i class="fas fa-star"></i> Puanla
+                            </a>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i>
+                Henüz hiç öğrenci çözümü bulunmuyor.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

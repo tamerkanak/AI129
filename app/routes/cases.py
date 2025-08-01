@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for, flash
 from flask_login import login_required, current_user
-from ..models import Case, Question, CaseSolution
+from ..models import Case, Question, CaseSolution, User
 from ..ai_service import ai_service
 from .. import db
 
@@ -120,3 +120,55 @@ def generate_case():
         return redirect(url_for('cases.case_detail', case_id=new_case.id))
     
     return render_template('generate_case.html')
+
+# Eğitmen paneli - Öğrenci çözümlerini listeleme (US09)
+@bp.route('/instructor/solutions')
+@login_required
+def instructor_solutions():
+    if not current_user.is_instructor:
+        flash('Bu sayfaya erişim yetkiniz yok.', 'error')
+        return redirect(url_for('main.index'))
+    
+    # Tüm öğrenci çözümlerini getir
+    solutions = CaseSolution.query.join(User).join(Case).order_by(CaseSolution.created_at.desc()).all()
+    return render_template('instructor_solutions.html', solutions=solutions)
+
+# Eğitmen puanlama sistemi (US10)
+@bp.route('/instructor/solution/<int:solution_id>/grade', methods=['GET', 'POST'])
+@login_required
+def grade_solution(solution_id):
+    if not current_user.is_instructor:
+        flash('Bu sayfaya erişim yetkiniz yok.', 'error')
+        return redirect(url_for('main.index'))
+    
+    solution = CaseSolution.query.get_or_404(solution_id)
+    
+    if request.method == 'POST':
+        instructor_score = request.form.get('instructor_score')
+        instructor_comment = request.form.get('instructor_comment', '')
+        
+        if instructor_score:
+            try:
+                score = float(instructor_score)
+                if 0 <= score <= 100:
+                    solution.instructor_score = score
+                    # Eğitmen yorumunu kaydetmek için yeni bir alan eklenebilir
+                    db.session.commit()
+                    flash('Puanlama başarıyla kaydedildi.', 'success')
+                    return redirect(url_for('cases.instructor_solutions'))
+                else:
+                    flash('Puan 0-100 arasında olmalıdır.', 'error')
+            except ValueError:
+                flash('Geçerli bir puan giriniz.', 'error')
+        else:
+            flash('Lütfen bir puan giriniz.', 'error')
+    
+    return render_template('grade_solution.html', solution=solution)
+
+# Kullanıcı geçmiş çözümlerini görme (US15)
+@bp.route('/my-solutions')
+@login_required
+def my_solutions():
+    # Kullanıcının kendi çözümlerini getir
+    solutions = CaseSolution.query.filter_by(user_id=current_user.id).join(Case).order_by(CaseSolution.created_at.desc()).all()
+    return render_template('my_solutions.html', solutions=solutions)

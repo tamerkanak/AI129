@@ -67,11 +67,11 @@
                             </a>
                             <ul class="dropdown-menu">
                                 {% if current_user.is_instructor %}
-                                <li><a class="dropdown-item" href="#">
+                                <li><a class="dropdown-item" href="{{ url_for('cases.instructor_solutions') }}">
                                     <i class="fas fa-chalkboard-teacher"></i> Eğitmen Paneli
                                 </a></li>
                                 {% endif %}
-                                <li><a class="dropdown-item" href="#">
+                                <li><a class="dropdown-item" href="{{ url_for('cases.my_solutions') }}">
                                     <i class="fas fa-history"></i> Geçmiş Çözümler
                                 </a></li>
                                 <li><hr class="dropdown-divider"></li>
@@ -84,6 +84,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('auth.login') }}">
                                 <i class="fas fa-sign-in-alt"></i> Giriş
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('auth.register') }}">
+                                <i class="fas fa-user-plus"></i> Kayıt Ol
                             </a>
                         </li>
                     {% endif %}

@@ -32,6 +32,16 @@
                         </button>
                     </form>
                     
+                    <!-- Kayıt Linki -->
+                    <div class="text-center mt-3">
+                        <p class="mb-0">
+                            Hesabınız yok mu? 
+                            <a href="{{ url_for('auth.register') }}" class="text-decoration-none">
+                                <i class="fas fa-user-plus"></i> Kayıt Ol
+                            </a>
+                        </p>
+                    </div>
+                    
                     <!-- Demo Kullanıcı Bilgileri -->
                     <div class="alert alert-info mt-3">
                         <h6><i class="fas fa-info-circle"></i> Demo Kullanıcılar:</h6>

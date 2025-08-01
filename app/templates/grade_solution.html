@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}Çözüm Puanlama{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-star"></i>
+                        Öğrenci Çözümü Puanlama
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <!-- Öğrenci ve Vaka Bilgileri -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h6 class="text-primary">
+                                <i class="fas fa-user-graduate"></i> Öğrenci
+                            </h6>
+                            <p class="h5">{{ solution.user.username }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-info">
+                                <i class="fas fa-calendar"></i> Tarih
+                            </h6>
+                            <p class="h6 text-muted">{{ solution.created_at.strftime('%d.%m.%Y %H:%M') }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h6 class="text-success">
+                                <i class="fas fa-file-medical"></i> Vaka
+                            </h6>
+                            <p class="h5">{{ solution.case.title }}</p>
+                            <p class="text-muted">
+                                <strong>Hasta:</strong> {{ solution.case.patient_name }} ({{ solution.case.age }} yaşında)<br>
+                                <strong>Şikayet:</strong> {{ solution.case.complaint }}
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Puanı -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h6 class="text-info">
+                                <i class="fas fa-robot"></i> AI Değerlendirmesi
+                            </h6>
+                            {% if solution.ai_score is not none %}
+                                <div class="d-flex align-items-center">
+                                    <span class="badge {% if solution.ai_score >= 80 %}bg-success{% elif solution.ai_score >= 60 %}bg-warning{% else %}bg-danger{% endif %} fs-5 me-3">
+                                        {{ "%.1f"|format(solution.ai_score) }}
+                                    </span>
+                                    <div class="progress flex-grow-1" style="height: 25px;">
+                                        <div class="progress-bar {% if solution.ai_score >= 80 %}bg-success{% elif solution.ai_score >= 60 %}bg-warning{% else %}bg-danger{% endif %}" 
+                                             style="width: {{ solution.ai_score }}%">
+                                            {{ "%.1f"|format(solution.ai_score) }}%
+                                        </div>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <span class="badge bg-secondary">AI puanı henüz hesaplanmamış</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Öğrenci Çözümü -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h6 class="text-primary">
+                                <i class="fas fa-stethoscope"></i> Öğrenci Tanısı
+                            </h6>
+                            <div class="border rounded p-3 bg-light">
+                                <p class="mb-0">{{ solution.diagnosis }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-success">
+                                <i class="fas fa-pills"></i> Öğrenci Tedavi Önerisi
+                            </h6>
+                            <div class="border rounded p-3 bg-light">
+                                <p class="mb-0">{{ solution.treatment }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Eğitmen Puanlama Formu -->
+                    <form method="POST" class="mt-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="instructor_score" class="form-label">
+                                        <i class="fas fa-star text-warning"></i> Eğitmen Puanı (0-100)
+                                    </label>
+                                    <input type="number" 
+                                           class="form-control form-control-lg" 
+                                           id="instructor_score" 
+                                           name="instructor_score" 
+                                           min="0" 
+                                           max="100" 
+                                           step="0.1"
+                                           value="{{ solution.instructor_score or '' }}"
+                                           required>
+                                    <div class="form-text">
+                                        Öğrencinin performansını 0-100 arasında puanlayın.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="instructor_comment" class="form-label">
+                                        <i class="fas fa-comment text-info"></i> Yorum (İsteğe Bağlı)
+                                    </label>
+                                    <textarea class="form-control" 
+                                              id="instructor_comment" 
+                                              name="instructor_comment" 
+                                              rows="3" 
+                                              placeholder="Öğrenciye geri bildirim..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Puanlama Kriterleri -->
+                        <div class="card mt-3 mb-4">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-clipboard-list"></i> Puanlama Kriterleri
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h6 class="text-success">90-100: Mükemmel</h6>
+                                        <small class="text-muted">Doğru tanı ve uygun tedavi</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="text-warning">70-89: İyi</h6>
+                                        <small class="text-muted">Genel olarak doğru yaklaşım</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="text-danger">0-69: Geliştirilmeli</h6>
+                                        <small class="text-muted">Eksik veya hatalı yaklaşım</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ url_for('cases.instructor_solutions') }}" 
+                               class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Geri Dön
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Puanı Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

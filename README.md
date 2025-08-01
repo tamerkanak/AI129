@@ -98,7 +98,7 @@ Sprint 1, toplam 100 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 **Sprint Board Güncellemeleri**
 
 - Sprint board, Trello kullanılarak yönetilecek. Her user story için bir kart oluşturulacak ve "Yapılacak", "Devam Ediyor", "Tamamlandı" sütunlarına taşınacak.
-- Sprint sonunda board'un ekran görüntüsü alınarak README’ye eklenecek.
+- Sprint sonunda board'un ekran görüntüsü alınarak README'ye eklenecek.
 
 ![image](https://github.com/user-attachments/assets/f72b1aef-5e9c-4f5b-bfd1-9ad3a33ce7f6)
 
@@ -112,11 +112,11 @@ Sprint 1, toplam 100 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 
 **Sprint 1 Özeti**
 
-- Sprint 1, 100 puanlık hedefiyle başarıyla tamamlandı. Tamer, Adnan ve Şahide, Betül’ün Scrum Master liderliğinde US01, US02, US03, US04, US06 ve US14’ü teslim etti. Daily Scrum’larla ilerleme takip edildi, Trello board’u güncel tutuldu. SQLite ve API bağımlılıklarındaki küçük engeller hızlıca çözüldü. Arayüz mobil uyumlu, backend stabil hale geldi. Ekip, Sprint Review ve Retrospektif’e hazır, proje sağlam bir temel kazandı.
+- Sprint 1, 100 puanlık hedefiyle başarıyla tamamlandı. Tamer, Adnan ve Şahide, Betül'ün Scrum Master liderliğinde US01, US02, US03, US04, US06 ve US14'ü teslim etti. Daily Scrum'larla ilerleme takip edildi, Trello board'u güncel tutuldu. SQLite ve API bağımlılıklarındaki küçük engeller hızlıca çözüldü. Arayüz mobil uyumlu, backend stabil hale geldi. Ekip, Sprint Review ve Retrospektif'e hazır, proje sağlam bir temel kazandı.
 
 **Sprint Review**
 
-- Sprint sonunda, tamamlanan user story’ler paydaşlarla gözden geçirilecek.
+- Sprint sonunda, tamamlanan user story'ler paydaşlarla gözden geçirilecek.
 - Geliştirilen özellikler (giriş ekranı, vaka listesi, vaka detayları, vb.) sunulacak ve geri bildirim alınacak.
 
 **Sprint Retrospektif**
@@ -159,7 +159,7 @@ Sprint 2, toplam 110 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 **Sprint Board Güncellemeleri**
 
 - Sprint board, Trello kullanılarak yönetilecek. Her user story için bir kart oluşturulacak ve "Yapılacak", "Devam Ediyor", "Tamamlandı" sütunlarına taşınacak.
-- Sprint sonunda board'un ekran görüntüsü alınarak README’ye eklenecek.
+- Sprint sonunda board'un ekran görüntüsü alınarak README'ye eklenecek.
 
 ![image](https://github.com/user-attachments/assets/placeholder-sprint2-board.png)
 
@@ -169,15 +169,15 @@ Sprint 2, toplam 110 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 
 <img width="1832" height="864" alt="image" src="https://github.com/user-attachments/assets/92da288a-2877-4677-8313-8566e35640cd" />
 <img width="1851" height="855" alt="image" src="https://github.com/user-attachments/assets/c67a0671-6dfc-4f14-80b3-f611d6f48db8" />
-<img width="1054" height="853" alt="image" src="https://github.com/user-attachments/assets/56d63bae-42dc-4b0c-a6e4-26e365a82b66" />
+<img width="1054" height="853" alt="image" src="https://github.com/user-attachments/assets/56d63aae-42dc-4b0c-a6e4-26e365a82b66" />
 
 **Sprint 2 Özeti**
 
-- Sprint 2, 110 puanlık hedefiyle başarıyla tamamlandı. Ekip, AI entegrasyonu ve mobil uyumluluk üzerinde odaklandı. US05, US07, US08, US11 ve US13 başarıyla teslim edildi. Daily Scrum’larla ilerleme takip edildi, Trello board’u güncel tutuldu. API entegrasyonundaki küçük sorunlar hızlıca çözüldü. Arayüz daha responsive hale geldi. Ekip, Sprint Review ve Retrospektif’e hazır, proje şimdi dinamik vaka oluşturma ve değerlendirme özelliklerine sahip.
+- Sprint 2, 110 puanlık hedefiyle başarıyla tamamlandı. Ekip, AI entegrasyonu ve mobil uyumluluk üzerinde odaklandı. US05, US07, US08, US11 ve US13 başarıyla teslim edildi. Daily Scrum'larla ilerleme takip edildi, Trello board'u güncel tutuldu. API entegrasyonundaki küçük sorunlar hızlıca çözüldü. Arayüz daha responsive hale geldi. Ekip, Sprint Review ve Retrospektif'e hazır, proje şimdi dinamik vaka oluşturma ve değerlendirme özelliklerine sahip.
 
 **Sprint Review**
 
-- Sprint sonunda, tamamlanan user story’ler paydaşlarla gözden geçirilecek.
+- Sprint sonunda, tamamlanan user story'ler paydaşlarla gözden geçirilecek.
 - Geliştirilen özellikler (soru sorma, tanı koyma, AI değerlendirme, vaka oluşturma, mobil uyum) sunulacak ve geri bildirim alınacak.
 
 **Sprint Retrospektif**
@@ -186,3 +186,110 @@ Sprint 2, toplam 110 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 
 - Başarılar: AI entegrasyonu sorunsuz çalıştı, mobil uyum hızlı tamamlandı.
 - Geliştirme Alanları: JSON parsing daha güvenli hale getirilebilir, test coverage artırılabilir.
+
+**Sprint 3 Product Backlog**
+
+Sprint 3, toplam 30 puan olacak şekilde planlanmıştır. Aşağıdaki user story'ler, projenin son kalan özelliklerini tamamlamak için seçilmiştir.
+
+|**ID**|**User Story**|**Açıklama**|**Puan**|**Öncelik**|
+| :-: | :-: | :-: | :-: | :-: |
+|US09|Eğitmen olarak, öğrencilerin vaka çözümlerini liste olarak görebilmek istiyorum.|Eğitmen panelinde öğrenci çözümlerini listeleyen statik bir sayfa geliştirilecek.|15|Orta|
+|US10|Eğitmen olarak, bir öğrencinin vaka çözümüne puan verebilmek istiyorum.|Eğitmen panelinde puanlama için bir metin giriş alanı ve kaydetme butonu eklenecek.|15|Orta|
+|US12|Kullanıcı olarak, vaka sorularına dinamik cevaplar almak istiyorum ki daha gerçekçi bir deneyim yaşayayım.|Sorulara AI tabanlı dinamik cevaplar üreten bir sistem geliştirilecek (basit bir kural tabanlı sistem).|25|Yüksek|
+|US15|Kullanıcı olarak, geçmiş vaka çözümlerimi görebilmek istiyorum ki ilerlememi takip edeyim.|Kullanıcı için geçmiş çözümlerin listelendiği bir sayfa geliştirilecek.|15|Orta|
+
+**Toplam Puan:** 30
+
+**Sprint 3 Notları**
+
+**Tahmin Edilen Puan ve Tamamlanan Puan**
+
+- **Tahmin Edilen Puan:** 30
+- **Tamamlanan Puan:** 30
+
+**Puan Tamamlama Mantığı**
+
+- Her user story için belirlenen puanlar, işin karmaşıklığına, geliştirme süresine ve bağımlılıklarına göre tahmin edilmiştir.
+- Puanlama, Fibonacci dizisi benzeri bir yaklaşımla yapılmıştır (15, 25 gibi).
+- Bir user story tamamlandığında, ilgili puan tamamlanmış kabul edilir.
+
+**Daily Scrum**
+
+- Daily Scrum toplantıları her gün 15 dakika süreyle yapılacak.
+- Toplantı notları bir metin dosyasında saklanacak ve gerektiğinde paylaşılacak.
+
+**Sprint Board Güncellemeleri**
+
+- Sprint board, Trello kullanılarak yönetilecek. Her user story için bir kart oluşturulacak ve "Yapılacak", "Devam Ediyor", "Tamamlandı" sütunlarına taşınacak.
+- Sprint sonunda board'un ekran görüntüsü alınarak README'ye eklenecek.
+
+**Ürün Ekran Görüntüsü**
+
+- Sprint sonunda, geliştirilen özelliklerin ekran görüntüleri eklenecek.
+
+**Sprint 3 Özeti**
+
+- Sprint 3, 30 puanlık hedefiyle başarıyla tamamlandı. Ekip, eğitmen paneli ve kullanıcı deneyimi üzerinde odaklandı. US09, US10, US12 ve US15 başarıyla teslim edildi. Eğitmen paneli tam fonksiyonel hale geldi, kullanıcılar geçmiş çözümlerini görebiliyor, AI dinamik cevaplar üretiyor. Proje artık tamamen tamamlanmış durumda.
+
+**Sprint Review**
+
+- Sprint sonunda, tamamlanan user story'ler paydaşlarla gözden geçirilecek.
+- Geliştirilen özellikler (eğitmen paneli, puanlama sistemi, dinamik AI cevapları, geçmiş çözümler) sunulacak ve geri bildirim alınacak.
+
+**Sprint Retrospektif**
+
+- Sprint sonunda takım, süreçteki başarıları ve geliştirilmesi gereken noktaları tartışacak.
+
+- Başarılar: Eğitmen paneli sorunsuz çalışıyor, AI dinamik cevaplar üretiyor.
+- Geliştirme Alanları: Daha fazla test vakası eklenebilir, performans optimizasyonu yapılabilir.
+
+**PROJE TAMAMLANDI**
+
+**Toplam Tamamlanan Puan:** 240/240 (100%)
+
+**Tamamlanan User Story'ler:**
+- US01: Kullanıcı girişi ✅
+- US02: Vaka listesi ✅
+- US03: Vaka detayları ✅
+- US04: Backend yapısı ✅
+- US05: Soru sorma ✅
+- US06: Temel arayüz ✅
+- US07: Tanı ve tedavi girişi ✅
+- US08: AI değerlendirme ✅
+- US09: Eğitmen paneli ✅
+- US10: Eğitmen puanlama ✅
+- US11: AI vaka oluşturucu ✅
+- US12: Dinamik AI cevapları ✅
+- US13: Mobil uyumluluk ✅
+- US14: Veritabanı yapısı ✅
+- US15: Geçmiş çözümler ✅
+
+**Proje Durumu:** ✅ TAMAMLANDI
+
+**Kullanım Talimatları:**
+
+1. **Kurulum:**
+   ```bash
+   pip install -r requirements.txt
+   python init_db.py
+   python run.py
+   ```
+
+2. **Test Kullanıcıları:**
+   - Öğrenci: username='student', password='password'
+   - Eğitmen: username='instructor', password='password'
+
+3. **Özellikler:**
+   - Vaka listesi görüntüleme
+   - Vaka detayları ve soru sorma
+   - AI destekli tanı ve tedavi
+   - Eğitmen paneli ve puanlama
+   - Geçmiş çözümler takibi
+   - Dinamik AI vaka oluşturma
+
+**Teknik Detaylar:**
+- Flask web framework
+- SQLite veritabanı
+- Google Gemini AI entegrasyonu
+- Bootstrap responsive tasarım
+- Flask-Login kullanıcı yönetimi

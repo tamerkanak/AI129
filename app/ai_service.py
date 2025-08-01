@@ -5,7 +5,7 @@ from typing import Dict, List, Optional
 class AIService:
     def __init__(self):
         # API anahtarını environment variable'dan al
-        api_key = "YOUR_API_KEY_HERE"
+        api_key = "AIzaSyByPqJtNQlHcldml-ArPHkYrJKkfFtX4es"
         if not api_key:
             print("UYARI: GOOGLE_API_KEY environment variable bulunamadı!")
             print("Vaka oluşturma özelliği sınırlı olacak.")

@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+
+{% block title %}Geçmiş Çözümlerim{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">
+                <i class="fas fa-history text-primary"></i>
+                Geçmiş Çözümlerim
+            </h2>
+            
+            {% if solutions %}
+            <div class="row">
+                {% for solution in solutions %}
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-file-medical text-primary"></i>
+                                {{ solution.case.title }}
+                            </h5>
+                            <small class="text-muted">
+                                {{ solution.created_at.strftime('%d.%m.%Y') }}
+                            </small>
+                        </div>
+                        <div class="card-body">
+                            <!-- Vaka Bilgileri -->
+                            <div class="mb-3">
+                                <h6 class="text-success">
+                                    <i class="fas fa-user-injured"></i> Hasta Bilgileri
+                                </h6>
+                                <p class="mb-1">
+                                    <strong>{{ solution.case.patient_name }}</strong> 
+                                    ({{ solution.case.age }} yaşında)
+                                </p>
+                                <p class="text-muted small mb-0">
+                                    <strong>Şikayet:</strong> {{ solution.case.complaint }}
+                                </p>
+                            </div>
+                            
+                            <!-- Puanlar -->
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <h6 class="text-info">
+                                        <i class="fas fa-robot"></i> AI Puanı
+                                    </h6>
+                                    {% if solution.ai_score is not none %}
+                                        <span class="badge {% if solution.ai_score >= 80 %}bg-success{% elif solution.ai_score >= 60 %}bg-warning{% else %}bg-danger{% endif %} fs-6">
+                                            {{ "%.1f"|format(solution.ai_score) }}
+                                        </span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">-</span>
+                                    {% endif %}
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-warning">
+                                        <i class="fas fa-chalkboard-teacher"></i> Eğitmen Puanı
+                                    </h6>
+                                    {% if solution.instructor_score is not none %}
+                                        <span class="badge {% if solution.instructor_score >= 80 %}bg-success{% elif solution.instructor_score >= 60 %}bg-warning{% else %}bg-danger{% endif %} fs-6">
+                                            {{ "%.1f"|format(solution.instructor_score) }}
+                                        </span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">-</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Çözüm Özeti -->
+                            <div class="mb-3">
+                                <h6 class="text-primary">
+                                    <i class="fas fa-stethoscope"></i> Tanınız
+                                </h6>
+                                <p class="text-truncate mb-2" title="{{ solution.diagnosis }}">
+                                    {{ solution.diagnosis[:100] }}{% if solution.diagnosis|length > 100 %}...{% endif %}
+                                </p>
+                                
+                                <h6 class="text-success">
+                                    <i class="fas fa-pills"></i> Tedavi Öneriniz
+                                </h6>
+                                <p class="text-truncate mb-0" title="{{ solution.treatment }}">
+                                    {{ solution.treatment[:100] }}{% if solution.treatment|length > 100 %}...{% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ url_for('cases.case_detail', case_id=solution.case.id) }}" 
+                                   class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-eye"></i> Vakayı Görüntüle
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-info" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#solutionModal{{ solution.id }}">
+                                    <i class="fas fa-expand"></i> Detay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Detay Modalları -->
+            {% for solution in solutions %}
+            <div class="modal fade" id="solutionModal{{ solution.id }}" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                <i class="fas fa-file-medical"></i>
+                                {{ solution.case.title }} - Çözüm Detayları
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Vaka Bilgileri -->
+                            <div class="row mb-4">
+                                <div class="col-12">
+                                    <h6 class="text-success">
+                                        <i class="fas fa-user-injured"></i> Hasta Bilgileri
+                                    </h6>
+                                    <div class="border rounded p-3 bg-light">
+                                        <p class="mb-1">
+                                            <strong>Ad:</strong> {{ solution.case.patient_name }}<br>
+                                            <strong>Yaş:</strong> {{ solution.case.age }}<br>
+                                            <strong>Şikayet:</strong> {{ solution.case.complaint }}
+                                        </p>
+                                        {% if solution.case.medical_history %}
+                                        <p class="mb-1">
+                                            <strong>Geçmiş:</strong> {{ solution.case.medical_history }}
+                                        </p>
+                                        {% endif %}
+                                        {% if solution.case.symptoms %}
+                                        <p class="mb-0">
+                                            <strong>Semptomlar:</strong> {{ solution.case.symptoms }}
+                                        </p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Puanlar -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <h6 class="text-info">
+                                        <i class="fas fa-robot"></i> AI Değerlendirmesi
+                                    </h6>
+                                    {% if solution.ai_score is not none %}
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge {% if solution.ai_score >= 80 %}bg-success{% elif solution.ai_score >= 60 %}bg-warning{% else %}bg-danger{% endif %} fs-5 me-3">
+                                                {{ "%.1f"|format(solution.ai_score) }}
+                                            </span>
+                                            <div class="progress flex-grow-1">
+                                                <div class="progress-bar {% if solution.ai_score >= 80 %}bg-success{% elif solution.ai_score >= 60 %}bg-warning{% else %}bg-danger{% endif %}" 
+                                                     style="width: {{ solution.ai_score }}%">
+                                                    {{ "%.1f"|format(solution.ai_score) }}%
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <span class="badge bg-secondary">AI puanı henüz hesaplanmamış</span>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-warning">
+                                        <i class="fas fa-chalkboard-teacher"></i> Eğitmen Değerlendirmesi
+                                    </h6>
+                                    {% if solution.instructor_score is not none %}
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge {% if solution.instructor_score >= 80 %}bg-success{% elif solution.instructor_score >= 60 %}bg-warning{% else %}bg-danger{% endif %} fs-5 me-3">
+                                                {{ "%.1f"|format(solution.instructor_score) }}
+                                            </span>
+                                            <div class="progress flex-grow-1">
+                                                <div class="progress-bar {% if solution.instructor_score >= 80 %}bg-success{% elif solution.instructor_score >= 60 %}bg-warning{% else %}bg-danger{% endif %}" 
+                                                     style="width: {{ solution.instructor_score }}%">
+                                                    {{ "%.1f"|format(solution.instructor_score) }}%
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <span class="badge bg-secondary">Eğitmen puanı henüz verilmemiş</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Çözüm Detayları -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-primary">
+                                        <i class="fas fa-stethoscope"></i> Tanınız
+                                    </h6>
+                                    <div class="border rounded p-3 bg-light">
+                                        <p class="mb-0">{{ solution.diagnosis }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-success">
+                                        <i class="fas fa-pills"></i> Tedavi Öneriniz
+                                    </h6>
+                                    <div class="border rounded p-3 bg-light">
+                                        <p class="mb-0">{{ solution.treatment }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tarih Bilgisi -->
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar"></i>
+                                        Çözüm tarihi: {{ solution.created_at.strftime('%d.%m.%Y %H:%M') }}
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('cases.case_detail', case_id=solution.case.id) }}" 
+                               class="btn btn-primary">
+                                <i class="fas fa-eye"></i> Vakayı Tekrar Görüntüle
+                            </a>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i>
+                Henüz hiç vaka çözümünüz bulunmuyor. 
+                <a href="{{ url_for('main.index') }}" class="alert-link">Vaka çözmeye başlayın</a>!
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 
