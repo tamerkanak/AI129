@@ -9,11 +9,15 @@ AI Klinik Geliştiricileri
 
 **Takım Rolleri**
 
-- **Ürün Sahibi (Product Owner):** Proje vizyonunu belirler, backlog'u önceliklendirir ve paydaşlarla iletişimi yönetir.
-- **Scrum Master:** Agile süreçlerin düzgün yürütülmesini sağlar, engelleri kaldırır.
-- **Geliştirici (Developer):** Teknik gereksinimleri yerine getirir, kodlama ve test süreçlerini yürütür.
-- **Tasarımcı:** Kullanıcı arayüzü (UI) ve kullanıcı deneyimi (UX) tasarımlarını hazırlar.
-- **Test Uzmanı:** Yazılımın doğruluğunu ve performansını test eder.
+- **Ürün Sahibi (Product Owner):** Adnan Kocatürk
+- **Scrum Master:** Betül Tuncay
+- **Geliştirici (Developer):** Tamer Kanak
+- **Tasarımcı:** Şahide Şeker
+- **Test Uzmanı:** Tamer Kanak
+
+**Trello Linki**
+
+- https://trello.com/b/DbBzbNEZ/al-klinik-board
 
 **Ürün İsmi**
 
@@ -110,7 +114,7 @@ Sprint 1, toplam 100 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 ![image](https://github.com/user-attachments/assets/d55fd081-3c0a-47e4-a0bf-2a868d1b73b8)
 ![image](https://github.com/user-attachments/assets/98540fa7-c589-4927-aff1-dcb9faf7f435)
 
-**Sprint 1 Özeti**
+**Sprint 1 Notları**
 
 - Sprint 1, 100 puanlık hedefiyle başarıyla tamamlandı. Tamer, Adnan ve Şahide, Betül'ün Scrum Master liderliğinde US01, US02, US03, US04, US06 ve US14'ü teslim etti. Daily Scrum'larla ilerleme takip edildi, Trello board'u güncel tutuldu. SQLite ve API bağımlılıklarındaki küçük engeller hızlıca çözüldü. Arayüz mobil uyumlu, backend stabil hale geldi. Ekip, Sprint Review ve Retrospektif'e hazır, proje sağlam bir temel kazandı.
 
@@ -171,7 +175,7 @@ Sprint 2, toplam 110 puan olacak şekilde planlanmıştır. Aşağıdaki user st
 <img width="1851" height="855" alt="image" src="https://github.com/user-attachments/assets/c67a0671-6dfc-4f14-80b3-f611d6f48db8" />
 <img width="1054" height="853" alt="image" src="https://github.com/user-attachments/assets/56d63bae-42dc-4b0c-a6e4-26e365a82b66" />
 
-**Sprint 2 Özeti**
+**Sprint 2 Notları**
 
 - Sprint 2, 110 puanlık hedefiyle başarıyla tamamlandı. Ekip, AI entegrasyonu ve mobil uyumluluk üzerinde odaklandı. US05, US07, US08, US11 ve US13 başarıyla teslim edildi. Daily Scrum'larla ilerleme takip edildi, Trello board'u güncel tutuldu. API entegrasyonundaki küçük sorunlar hızlıca çözüldü. Arayüz daha responsive hale geldi. Ekip, Sprint Review ve Retrospektif'e hazır, proje şimdi dinamik vaka oluşturma ve değerlendirme özelliklerine sahip.
 
@@ -234,7 +238,7 @@ Sprint 3, toplam 30 puan olacak şekilde planlanmıştır. Aşağıdaki user sto
 <img width="1859" height="877" alt="image" src="https://github.com/user-attachments/assets/92146b69-b572-458b-9d5b-fb5da482628e" />
 <img width="864" height="849" alt="image" src="https://github.com/user-attachments/assets/ba9275e2-5194-43e4-8448-33f995c56bac" />
 
-**Sprint 3 Özeti**
+**Sprint 3 Notları**
 
 - Sprint 3, 30 puanlık hedefiyle başarıyla tamamlandı. Ekip, eğitmen paneli ve kullanıcı deneyimi üzerinde odaklandı. US09, US10, US12 ve US15 başarıyla teslim edildi. Eğitmen paneli tam fonksiyonel hale geldi, kullanıcılar geçmiş çözümlerini görebiliyor, AI dinamik cevaplar üretiyor. Proje artık tamamen tamamlanmış durumda.
 
