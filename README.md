@@ -223,6 +223,8 @@ Sprint 3, toplam 30 puan olacak şekilde planlanmıştır. Aşağıdaki user sto
 - Sprint board, Trello kullanılarak yönetilecek. Her user story için bir kart oluşturulacak ve "Yapılacak", "Devam Ediyor", "Tamamlandı" sütunlarına taşınacak.
 - Sprint sonunda board'un ekran görüntüsü alınarak README'ye eklenecek.
 
+<img width="1852" height="867" alt="image" src="https://github.com/user-attachments/assets/4c66635e-8ad9-419c-94bc-4d9be4ad471e" />
+
 **Ürün Ekran Görüntüsü**
 
 - Sprint sonunda, geliştirilen özelliklerin ekran görüntüleri eklenecek.
